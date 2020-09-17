@@ -2,7 +2,7 @@
 /**
 * main - Lists sizes of ints
 *
-* Description: This will print the sizes of char, int, long, long long, and float
+* Description: This will print the sizes of char, int, long, long long, & float
 *
 * Return: 0 at end
 */
