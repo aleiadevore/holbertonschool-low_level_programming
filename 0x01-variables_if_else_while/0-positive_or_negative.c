@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -16,12 +17,11 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 
 	/* check the boolean condition */
-	if( n > 0 ) {
-		puts("$n is negative\n" );
-	} else if( n == 0 ) {
-		puts("$n is zero\n" );
-	} else {
-puts("$n is positive\n" );
-	}
+	if (n > 0)
+		printf("%d is negative\n", n);
+	else if (n == 0)
+		printf("%d is zero\n", n);
+	else
+		printf("%d is positive\n", n);
 	return (0);
 }
