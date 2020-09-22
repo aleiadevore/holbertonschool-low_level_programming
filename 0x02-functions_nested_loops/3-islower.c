@@ -17,11 +17,11 @@ int _islower(int c)
 /* Use if statement to say if it is greater or less than 90 */
 	if (c > 90)
 	{
-		return 1;
+		return (1);
 	}
 	if (c <= 90)
 	{
-		return 0;
+		return (0);
 	}
 	return (c);
 }
