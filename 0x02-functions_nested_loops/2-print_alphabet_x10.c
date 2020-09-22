@@ -1,6 +1,5 @@
 #include "holberton.h"
 
-int _putchar(char c);
 /**
 * print_alphabet_x10 - Prints the alphabet ten times
 *
