@@ -1,6 +1,5 @@
 #include "holberton.h"
 
-int _putchar(char c);
 /**
  * _isalpha - Checks value of c
  * @c: Character that may be an alpha
@@ -12,17 +11,16 @@ int _putchar(char c);
 
 int _isalpha(int c)
 {
-	if(c > 65 || c < 90)
+	if (c >= 65 &&  c <= 90)
 	{
 		return (1);
 	}
-	else if(c > 97 || c < 122)
-		{
-			return (1);
-		}
+	else if (c >= 97 && c <= 122)
+	{
+		return (1);
+	}
 	else
 	{
 		return (0);
 	}
-	return (c);
 }
