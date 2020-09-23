@@ -2,7 +2,8 @@
 
 /**
  * add - adds two integers
- * @int: integar to add
+ * @a: First number
+ * @b: Second number
  * Description: Adds two integers and returns the result
  *
  * Return: Value of integers added together
