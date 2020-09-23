@@ -19,6 +19,7 @@ void jack_bauer(void)
 
 /* Creates a loop of 24 */
 	int b, c, h, r, m, t;
+
 	b = 0;
 
 	while (b < 24)
