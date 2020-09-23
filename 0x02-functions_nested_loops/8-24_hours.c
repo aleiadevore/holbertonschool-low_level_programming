@@ -18,38 +18,28 @@ void jack_bauer(void)
 /* Has 1440 lines that are 5 characters wide */
 
 /* Creates a loop of 24 */
+	int b, c, h, r, m, t;
+	b = 0;
 
-	int b = 0;
-
-	while (b <= 23)
+	while (b < 24)
 	{
-		int h = 0;
+		c = 0;
 
-/*
- * Code is wanting to go up to 24 and then restart. I need it to repeat numbers
- * until after colon hits 59. Use same intiger? That way it can't move until the
- * minutes are correct
- */
-		while (h < 24)
+		while (c < 60)
 		{
-			_putchar(h / 10 + '0');
-			_putchar(h % 10 + '0');
-			h++;
-			while (h < 59)
-			{
-/*
- * If I used the same variable, they wouldn't move at different numbers
- */
+			h = (b / 10);
+			r = (b % 10);
+			m = (c / 10);
+			t = (c % 10);
 
-/*After colon */
+			_putchar ('0' + h);
+			_putchar ('0' + r);
 			_putchar (':');
-			_putchar(h / 10 + '0');
-			_putchar(h % 10 + '0');
-			h++;
-			}
-		_putchar ('\n');
+			_putchar('0' + m);
+			_putchar('0' + t);
+			_putchar ('\n');
+			c++;
 		}
 		b++;
 	}
-
 }
