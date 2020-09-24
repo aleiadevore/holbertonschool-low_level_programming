@@ -14,9 +14,11 @@ void print_remaining_days(int month, int day, int year)
 {
 /* First if assumes leap year */
 
-/* If the year is divisible by 4 or the year is divisible by 400
- * and the year is not divisible by 100 */
-/* Doesn't work. If it's divisible by 400 then it's also divisible by 100 */
+/*
+ * If the year is divisible by 4 or the year is divisible by 400
+ * and the year is not divisible by 100
+ * Doesn't work. If it's divisible by 400 then it's also divisible by 100
+*/
 
 	if ((year % 4 == 0 || year % 400 == 0) && (year % 100 == 0))
 	{
