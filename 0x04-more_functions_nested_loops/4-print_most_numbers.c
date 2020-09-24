@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_numbers - prints numbers 0-9 that are not 2 or 4
+ * print_most_numbers - prints numbers 0-9 that are not 2 or 4
  *
  * Return: Always 0.
  */
