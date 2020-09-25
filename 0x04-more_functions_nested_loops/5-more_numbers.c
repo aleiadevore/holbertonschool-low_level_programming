@@ -16,16 +16,12 @@ void more_numbers(void)
 		{
 			b = col / 10;
 			c = col % 10;
-
-			if (col <= 9)
-			{
-				_putchar('0' + col);
-			}
+/* Need to rewrite so it only uses three putchars */
 			if (col > 9)
 			{
 				_putchar('0' + b);
-				_putchar('0' + c);
 			}
+			_putchar('0' + c);
 		}
 		_putchar('\n');
 	}
