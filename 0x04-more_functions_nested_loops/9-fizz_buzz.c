@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 
 /**
  * main - Prints numbers 1-100 with fizz and buzz replacing
@@ -21,7 +20,7 @@ int main(void)
 		else if (i % 3 == 0 && i % 5 == 0)
 			printf("FizzBuzz ");
 		else if (i == 100)
-			printf("%d", i);
+			puts("100");
 		else
 			printf("%d ", i);
 	}
