@@ -30,6 +30,13 @@ void print_number(int n)
 		_putchar('0' + c / 10);
 		_putchar('0' + c % 10);
 	}
+	if (n <= -100 && n > -1000)
+	{
+		_putchar('-');
+		_putchar('0' + -b);
+		_putchar('0' + (-c) / 10);
+		_putchar('0' + (-c) % 10);
+	}
 	if (n >= 1000 && n < 10000)
 	{
 		_putchar('0' + d);
