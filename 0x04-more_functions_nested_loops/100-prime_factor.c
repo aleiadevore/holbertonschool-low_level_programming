@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include "holberton.h"
 
+/**
+* main - Returns largest prime number
+*
+* description: retruns largest prime number
+* return: 0
+*/
+
 int main(void)
 {
 	int b = 3, c = 4019, d = 50829599;
