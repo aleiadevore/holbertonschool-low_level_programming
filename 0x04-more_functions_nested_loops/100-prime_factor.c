@@ -5,7 +5,8 @@
 * main - Returns largest prime number
 *
 * description: retruns largest prime number
-* return: 0
+*
+* Return: success value
 */
 
 int main(void)
