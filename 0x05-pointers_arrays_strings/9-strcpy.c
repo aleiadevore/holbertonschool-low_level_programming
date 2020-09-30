@@ -9,6 +9,13 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	dest = src;
-	return (dest);
+	int length = 0, spot;
+
+	while (src[length] != '\0')
+	{
+		length++;
+	}
+	for (spot = 0; spot < length; spot++)
+		dest[spot] = src[spot];
+        return (dest);
 }
