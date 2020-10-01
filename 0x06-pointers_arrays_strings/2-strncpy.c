@@ -16,7 +16,15 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		length++;
 	}
-	for (spot = 0; spot <= n && spot <= length; spot++)
+	if (n >= length)
+	{
+		for (spot = 0; spot <= length; spot++)
+			dest[spot] = src[spot];
+	}
+	else
+	{
+	for (spot = 0; spot < n; spot++)
 		dest[spot] = src[spot];
+	}
 	return (dest);
 }
