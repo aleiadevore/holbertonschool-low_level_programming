@@ -9,9 +9,6 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int place = 0, i = 0;
-/* Could do two dimensional array and see if cell values are equal */
-
 	int i, place, count = 0;
 
 	for (place = 0; accept[place] != '\0'; place++)
