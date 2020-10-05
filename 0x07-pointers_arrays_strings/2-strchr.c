@@ -11,7 +11,7 @@ char *_strchr(char *s, char c)
 {
 	int i = 0;
 
-	while (*s != c)
+	while (*s != c && *s != '\0')
 	{
 		s++;
 		i++;
