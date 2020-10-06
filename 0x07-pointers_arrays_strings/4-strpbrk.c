@@ -18,7 +18,7 @@ char *_strpbrk(char *s, char *accept)
 				break;
 		if (accept[n] != '\0')
 			return (s);
-		else if (accept[n] == '\0' && s[i + 1] == '\0')
+		else if (accept[n] == '\0' && s[i] == '\0')
 			break;
 		s++;
 	}
