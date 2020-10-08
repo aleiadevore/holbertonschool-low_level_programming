@@ -13,7 +13,7 @@ int is_palindrome(char *s)
 {
 	int start = 0, end = _strlen_recursion(s);
 
-	if (*s == 1)
+	if (*s == 1 || s[start] == '\0')
 		return (1);
 	else if (*s == 0)
 		return (0);
