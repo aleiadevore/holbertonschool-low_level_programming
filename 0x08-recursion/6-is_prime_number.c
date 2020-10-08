@@ -11,6 +11,8 @@ int prime(int n, int y);
 
 int is_prime_number(int n)
 {
+	if (n <= 0)
+		return (0);
 	if (n == 1)
 		return (0);
 		n = prime(n, 2);
@@ -33,8 +35,8 @@ int prime(int n, int y)
 	if (y >= n)
 		return (1);
 	else if (n % y == 0)
-		return (n);
-	else if (n % n == 0)
+		return (0);
+	else if (y * y == n)
 		return (0);
 	else
 		return (prime(n, y + 1));
