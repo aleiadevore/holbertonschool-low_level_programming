@@ -23,7 +23,8 @@ int main(int argc, char **argv)
 	{
 
 /*if symbol that not number print Error new line and return 1*/
-		if (*argv[count] < 48 || *argv[count] > 57)
+		if ((*argv[count] < 48 || *argv[count] > 57)
+		    && *argv[count] != 45)
 		{
 			printf("Error\n");
 			return (1);
