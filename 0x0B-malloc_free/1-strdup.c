@@ -12,6 +12,8 @@ char *_strdup(char *str)
 	unsigned int x;
 	char  *ptr;
 
+	if (str[0] == '\0')
+		return (NULL);
 	ptr = malloc(sizeof(str) + 1);
 	for (x = 0; x <= sizeof(str); x++)
 	{
