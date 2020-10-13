@@ -12,9 +12,11 @@ char *_strdup(char *str)
 	unsigned int x;
 	char  *ptr;
 
-	if (str[0] == '\0')
+	if (*str == '\0')
 		return (NULL);
 	ptr = malloc(sizeof(str) + 1);
+	if (ptr == 0)
+		return (NULL);
 	for (x = 0; x <= sizeof(str); x++)
 	{
 		ptr[x] = str[x];
