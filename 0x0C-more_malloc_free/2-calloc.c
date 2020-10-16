@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -10,16 +11,21 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *ptr, x;
+	char *ptr;
+	unsigned int x;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * size * sizeof(unsigned int));
-	if (!ptr)
-		return (NULL);
-	for (x = 0; x < nmemb; x++)
 	{
-		ptr[x] = 0;
+		return (NULL);
+	}
+	ptr = malloc((nmemb * size) * sizeof(char));
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	for (x = 0; x < (nmemb * size); x++)
+	{
+		ptr[x] = '\0';
 	}
 	return (ptr);
 }
