@@ -14,11 +14,11 @@ int main(int argc, char **argv)
 	if (argv < 0)
 	{
 		printf("Error\n");
-		return (2);
+		return (1);
 	}
 	else
 	{
 		printf("Error\n");
-		return (1);
+		return (2);
 	}
 }
