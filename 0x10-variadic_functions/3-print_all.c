@@ -15,21 +15,19 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0, b;
 	char *ptr;
 
-	while (format)
+	va_start(args, format);
+	while (format != NULL && format[i] != '\0')
 	{
-		va_start(args, format);
-		while (format[i] != '\0')
+		b = 0;
+		switch (format[i])
 		{
-			b = 0;
-			switch (format[i])
-			{
-			case 'c':
-				printf("%c", va_arg(args, int));
+		case 'c':
+			printf("%c", va_arg(args, int));
 				break;
-			case 'i':
-				printf("%d", va_arg(args, int));
-				break;
-			case 'f':
+		case 'i':
+			printf("%d", va_arg(args, int));
+			break;
+		case 'f':
 				printf("%f", va_arg(args, double));
 				break;
 			case 's':
@@ -50,7 +48,5 @@ void print_all(const char * const format, ...)
 			i++;
 		}
 		va_end(args);
-		break;
-	}
 	printf("\n");
 }
