@@ -12,7 +12,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	unsigned int i = 0, bool;
+	unsigned int i = 0, bool, x;
 	char *ptr;
 
 	va_start(args, format);
@@ -46,7 +46,8 @@ void print_all(const char * const format, ...)
 		default:
 			break;
 		}
-		if (format[i + 1] != '\0' && bool != 0)
+		x = format[i + 1];
+		if (x == 'c' || x == 'i' || x == 'f' || x == 's')
 			printf(", ");
 		i++;
 	}
