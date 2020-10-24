@@ -25,19 +25,15 @@ void print_all(const char * const format, ...)
 			{
 			case 'c':
 				printf("%c", va_arg(args, int));
-				b += 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
-				b += 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
-				b += 1;
 				break;
 			case 's':
 				ptr = va_arg(args, char *);
-				b += 1;
 				if (!ptr)
 				{
 					printf("(nil)\n");
@@ -46,9 +42,10 @@ void print_all(const char * const format, ...)
 				printf("%s", ptr);
 				break;
 			default:
+				b = 1;
 				break;
 			}
-			if (b != 0 && format[i + 1] != '\0')
+			if (b != 1 && format[i + 1] != '\0')
 				printf(", ");
 			i++;
 		}
