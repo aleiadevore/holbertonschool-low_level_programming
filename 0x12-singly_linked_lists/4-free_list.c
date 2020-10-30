@@ -12,7 +12,6 @@ void free_list(list_t *head)
 
 	while (head != NULL)
 	{
-		printf("clear mem for: %s", head->str);
 		place = head;
 		head = head->next;
 		free(place->str);
