@@ -14,7 +14,10 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	lastnode = malloc(sizeof(list_t));
 	if (!lastnode)
+	{
+		free(lastnode);
 		return (NULL);
+	}
 	lastnode->str = strdup(str);
 	for (count = 0; str[count] != '\0'; count++)
 		;
