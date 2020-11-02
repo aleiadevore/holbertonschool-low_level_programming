@@ -12,17 +12,12 @@ int _strcmp(char *s1, char *s2)
 {
 	int a = 0, b = 0, c;
 
-	while (s1[a] != '\0')
-		a++;
-	while (s2[b] != '\0')
-		b++;
-	if (a == b)
+	while (s1[a] == s2[b])
 	{
-		c = 0;
+		if (s1[a] == '\0' || s2[b] == '\0')
+			break;
+		a++, b++;
 	}
-	else
-	{
-		c = s1 - s2;
-	}
+	c = s1[a] - s2[b];
 	return (c);
 }
