@@ -9,12 +9,12 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int i, j, l, res;
+	unsigned long int i, j, l, count = 0, val;
 	char c, bit[32];
 
-	l = *n;
-	if (l == 0 && index > 0)
+	if (index > 32)
 		return (-1);
+	l = *n;
 	for (i = 0; i < 32; i++)
 		bit[i] = 0;
 	for (i = 31; l > 0; i--)
@@ -23,10 +23,20 @@ int set_bit(unsigned long int *n, unsigned int index)
 		bit[i] = c;
 		l /= 2;
 	}
-	for (j = 0, i = 31; j <= index; j++, i--)
+	j = 31 - index;
+	bit[j] = '1';
+	for (i = 0; bit[i] != '1'; i++)
 		;
-	for (res = 0, i = 0; bit[i] != '\0'; ++i)
-		res = res * 10 + bit[i] + '0';
-	*n = res;
+	for (; i < 32; i++)
+	{
+		if (bit[i] == 48)
+			val = 0;
+		else if (bit[i] == 49)
+			val = 1;
+		else
+			return (-1);
+		count = (count * 2) + val;
+	}
+	*n = count;
 	return (1);
 }
