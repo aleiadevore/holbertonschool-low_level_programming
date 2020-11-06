@@ -17,7 +17,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (n == 0 && index > 0)
 		return (-1);
 	for (i = 0; i < 64; i++)
-		bit[i] = 0;
+		bit[i] = '0';
 	for (i = 63; n > 0; i--)
 	{
 		c = (n % 2) + '0';
