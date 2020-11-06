@@ -10,7 +10,7 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int i, j;
-	char c, bit[32];
+	char k, c, bit[32];
 
 	if (n == 0 && index > 0)
 		return (-1);
@@ -22,16 +22,11 @@ int get_bit(unsigned long int n, unsigned int index)
 		bit[i] = c;
 		n /= 2;
 	}
-	for (i = 0; bit[i] != '1'; i++)
-		;
-	for (j = 0; j < index; i++, j++)
-	{
-		if (bit[i] == '\0')
-			return (-1);
-	}
-	if (bit[i] == 48)
+	for (j = 0, i = 31; j <= index; j++, i--)
+		k = bit[i];
+	if (k == 48)
 		j = 0;
-	else if (bit[i] == 49)
+	else if (k == 49)
 		j = 1;
 	else
 		return (-1);
