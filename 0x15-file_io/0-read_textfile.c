@@ -10,7 +10,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	int fd, j;
 	char buff[2020];
 	size_t i;
 
@@ -21,7 +21,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	read(fd, buff, letters);
 	for (i = 0; i <= letters && buff[i] != '\0'; i++)
-		putchar(buff[i]);
+	{
+		j = _putchar(buff[i]);
+		if (j == -1)
+		{
+			close(fd);
+			return (0);
+		}
+	}
 	close(fd);
 	return (i);
 }
