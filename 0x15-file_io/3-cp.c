@@ -22,6 +22,27 @@ int closefd(int fd, char *buff)
 }
 
 /**
+ * checkfail - checks fails
+ * @fd: file descriptor
+ * @check: check value
+ * @str: string to print
+ * @buff: buffer
+ * @av: command
+ * Return: fd
+ */
+
+int checkfail(int fd, int check, char *str, char *buff, char *av)
+{
+	if (fd == -1 || check == -1)
+	{
+		free(buff);
+		dprintf(2, "Error: Can't %s %s\n", str, av);
+		exit(99);
+	}
+	return (fd);
+}
+
+/**
  * main - copies contents of one file to another
  * @ac: number of arguments
  * @av: array of arguments
@@ -45,21 +66,10 @@ int main(int ac, char **av)
 		buff[f] = '\0';
 	fd1 = open(av[1], O_RDWR, 0664);
 	check = read(fd1, buff, 1024);
-	if (fd1 == -1 || check == -1)
-	{
-		free(buff);
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	read(fd1, buff, 1024);
+	checkfail(fd1, check, "read", buff, av[2]);
 	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	check = write(fd2, buff, 1024);
-	if (fd2 == -1 || check == -1)
-	{
-		free(buff);
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
+	checkfail(fd2, check, "write to", buff, av[2]);
 	closefd(fd1, buff);
 	closefd(fd2, buff);
 	free(buff);
