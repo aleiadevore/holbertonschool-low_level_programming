@@ -9,7 +9,7 @@
 
 int main(int ac, char **av)
 {
-	int fd1, fd2, f;
+	int fd1, fd2, f, check;
 	char buff[1024];
 
 	if (ac != 3)
@@ -18,19 +18,19 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fd1 = open(av[1], 010);
-	if (fd1 == -1)
+	check = read(fd1, buff, 1024);
+	if (fd1 == -1 || check == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	fd2 = open(av[1], O_CREAT | O_WRONLY | O_TRUNC, 664);
-	if (fd2 == -1)
+	check = write(fd2, buff, 1024);
+	if (fd2 == -1 || check == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	read(fd1, buff, 1024);
-	write(fd2, buff, 1024);
 	f = close(fd1);
 	if (f == -1)
 	{
