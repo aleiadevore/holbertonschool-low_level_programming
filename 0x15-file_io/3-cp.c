@@ -60,5 +60,5 @@ int main(int ac, char **av)
 	closefd(fd1, buff);
 	closefd(fd2, buff);
 	free(buff);
-	return (0);
+	return (1);
 }
