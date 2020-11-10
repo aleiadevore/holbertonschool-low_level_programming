@@ -10,6 +10,7 @@
 int main(int ac, char **av)
 {
 	int fd1, fd2, f;
+	char buff[1024];
 
 	if (ac != 3)
 	{
@@ -28,7 +29,8 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	dup2(fd1, fd2);
+	read(fd1, buff, 1024);
+	write(fd2, buff, 1024);
 	f = close(fd1);
 	if (f == -1)
 	{
