@@ -36,13 +36,13 @@ int main(int ac, char **av)
 	f = close(fd1);
 	if (f == -1)
 	{
-		dprintf(2, "Error: Can't close fd 2\n");
+		dprintf(2, "Error: Can't close fd %dn", fd1);
 		exit(100);
 	}
 	f = close(fd2);
 	if (f == -1)
 	{
-		dprintf(2, "Error: Can't close fd 2\n");
+		dprintf(2, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
 	return (1);
