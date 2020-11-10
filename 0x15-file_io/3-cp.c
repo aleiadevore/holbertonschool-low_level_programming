@@ -3,7 +3,7 @@
 /**
  * closefd - closes files
  * @fd: file descriptor
- * buff: buffer
+ * @buff: buffer
  * Return: value of file descriptor
  */
 
