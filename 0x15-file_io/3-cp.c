@@ -39,7 +39,7 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	buff = malloc(1024 * sizeof(char));
-	for (f = 0; f <= 1024; f++)
+	for (f = 0; f < 1024; f++)
 		buff[f] = '\0';
 	fd1 = open(av[1], O_RDWR, 0664);
 	check = read(fd1, buff, 1024);
