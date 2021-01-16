@@ -10,7 +10,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node = NULL;
+	hash_node_t *node = NULL, *oldhead;
 	unsigned long int hash_index;
 	char *vcpy = NULL;
 
@@ -22,15 +22,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = (char *)key;
 	vcpy = strdup((char *)value);
 	node->value = vcpy;
+	node->next = NULL;
 
 	hash_index = key_index((const unsigned char *)key, ht->size);
 
-	while (ht->array[hash_index] != NULL && ht->array[hash_index]->key != NULL)
+	/* check if value is NULL. if not, make linked list */
+	if (ht->array[hash_index] == NULL)
+		ht->array[hash_index] = node;
+	else
 	{
-		++hash_index;
-		hash_index %= ht->size;
+		oldhead = ht->array[hash_index];
+		node->next = oldhead;
+		ht->array[hash_index] = node;
 	}
-	ht->array[hash_index] = node;
-
 	return (1);
 }
