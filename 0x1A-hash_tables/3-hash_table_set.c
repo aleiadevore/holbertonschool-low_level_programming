@@ -17,10 +17,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (strlen(key) < 1)
 		return (0);
+	if (ht == NULL)
+		return (0);
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
-	node->key = (char *)key;
+	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
 
