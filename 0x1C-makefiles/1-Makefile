@@ -1,8 +1,9 @@
-SRC = holberton.o main.o
+SRC = holberton.c main.c
+
 CC = gcc
 
 all: $(SRC)
-	$(CC) holberton.o main.o -o holberton
+	$(CC) $(SRC) -o holberton
 
 holberton.o: holberton.c
 	$(CC) -c holberton.c
