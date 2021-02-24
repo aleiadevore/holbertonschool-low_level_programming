@@ -1,11 +1,11 @@
 SRC = main.c holberton.c
-CC = gcc
+CC = gcc $(CFLAGS)
 NAME = holberton
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) *~ $(NAME)
