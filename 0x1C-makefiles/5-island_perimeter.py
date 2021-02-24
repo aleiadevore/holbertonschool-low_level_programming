@@ -6,6 +6,8 @@ def island_perimeter(grid):
     """ Returns parimeter of island, with 1 == land and 0 == width """
 
     parimeter = 0
+    if grid is None:
+        return parimeter
     for line in range(len(grid)):
         for square in range(len(grid[line])):
             if grid[line][square] == 1:
@@ -19,7 +21,7 @@ def island_perimeter(grid):
                 if square is not 0:
                     if grid[line][square - 1] == 1:
                         parimeter -= 1
-                if square < len(grid[line]):
+                if square < len(grid[line]) - 1:
                     if grid[line][square + 1] == 1:
                         parimeter -= 1
     return parimeter
