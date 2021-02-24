@@ -1,19 +1,10 @@
 SRC = main.c holberton.c
-
 CC = gcc
-
 NAME = holberton
-
-OBJ = main.o holberton.o
+OBJ = $(SRC:.c=.o)
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-main.o:
-	$(CC) -c main.c
-
-holberton.o:
-	$(CC) -c holberton.c
 
 clean:
 	rm *.o
