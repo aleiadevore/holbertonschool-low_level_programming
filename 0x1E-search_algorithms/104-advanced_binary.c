@@ -47,5 +47,7 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	int right = size - 1;
 
+	if (array == NULL)
+		return (-1);
 	return (real_binary(array, 0, right, value));
 }
