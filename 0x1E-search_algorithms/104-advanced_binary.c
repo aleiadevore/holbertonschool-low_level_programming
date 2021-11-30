@@ -63,7 +63,7 @@ int real_binary(int *arr, int l, int r, int v)
 			return check_smaller(arr, mid, v, 0);
 
 		if (arr[mid] > v)
-			return (real_binary(arr, l, mid - 1, v));
+			return (real_binary(arr, l, mid, v));
 
 		return (real_binary(arr, mid + 1, r, v));
 	}
