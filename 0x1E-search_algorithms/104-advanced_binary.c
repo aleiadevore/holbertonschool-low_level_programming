@@ -5,6 +5,35 @@
 /**
  * real_binary - searches for int in array by dividing in half
  * @arr: array to search
+ * @i: index checking
+ * @v: value to find
+ * Return: index of value or -1
+ */
+int check_smaller(int *arr, int i, int v)
+{
+	int j = i, count = 0;
+
+	while (arr[j] && arr[j - 1] == v)
+	{
+		j--;
+		count ++;
+	}
+
+	if (count > 0)
+	{
+		printf("Searching in array: ");
+		for (i = 0; i < count; i++)
+			printf("%d, ", v);
+		printf("%d\n", v);
+	}
+
+	return (j);
+
+}
+
+/**
+ * real_binary - searches for int in array by dividing in half
+ * @arr: array to search
  * @l: left side of array
  * @r: right side of array
  * @v: value to find
@@ -19,12 +48,15 @@ int real_binary(int *arr, int l, int r, int v)
 	{
 		int mid = l + (r - l) / 2;
 
+		/* Printing current check */
 		printf("Searching in array: ");
 		for (i = l; i < r; i++)
 			printf("%d, ", arr[i]);
 		printf("%d\n", arr[r]);
+
+
 		if (arr[mid] == v)
-			return (mid);
+			return check_smaller(arr, mid, v);
 
 		if (arr[mid] > v)
 			return (real_binary(arr, l, mid - 1, v));
