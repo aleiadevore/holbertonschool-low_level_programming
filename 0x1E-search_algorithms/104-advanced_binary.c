@@ -3,10 +3,29 @@
 #include "search_algos.h"
 
 /**
- * real_binary - searches for int in array by dividing in half
+ * print_check - prints section currently being checked
+ * @arr: array to search
+ * @l: left side
+ * @r: right side
+ * Return: index of value or -1
+ */
+void print_check(int *arr, int l, int r)
+{
+	int i;
+
+	/* Printing current check */
+	printf("Searching in array: ");
+	for (i = l; i < r; i++)
+		printf("%d, ", arr[i]);
+	printf("%d\n", arr[r]);
+}
+
+/**
+ * check_smaller - checks if smaller index with value
  * @arr: array to search
  * @i: index checking
  * @v: value to find
+ * @count: number of repeats
  * Return: index of value or -1
  */
 int check_smaller(int *arr, int i, int v, int count)
@@ -17,12 +36,7 @@ int check_smaller(int *arr, int i, int v, int count)
 		return check_smaller(arr, j, v, count + 1);
 
 	if (count > 0)
-	{
-		printf("Searching in array: ");
-		for (i = 0; i < count; i++)
-			printf("%d, ", v);
-		printf("%d\n", v);
-	}
+		print_check(arr, i, i + count);
 
 	return (j + 1);
 
@@ -39,18 +53,11 @@ int check_smaller(int *arr, int i, int v, int count)
 
 int real_binary(int *arr, int l, int r, int v)
 {
-	int i;
-
 	if (r >= l)
 	{
 		int mid = l + (r - l) / 2;
 
-		/* Printing current check */
-		printf("Searching in array: ");
-		for (i = l; i < r; i++)
-			printf("%d, ", arr[i]);
-		printf("%d\n", arr[r]);
-
+		print_check(arr, l, r);
 
 		if (arr[mid] == v)
 			return check_smaller(arr, mid, v, 0);
