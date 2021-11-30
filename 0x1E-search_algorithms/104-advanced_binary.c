@@ -60,16 +60,41 @@ int real_binary(int *arr, int l, int r, int v)
 		print_check(arr, l, r);
 
 		if (arr[mid] == v)
+		{
+			if (arr[mid - 1] == v)
+				print_check(arr, l, mid);
 			return (check_smaller(arr, mid, v, 0));
+		}
 
 		if (arr[mid] > v)
+		{
+			printf("Going left\n");
 			return (real_binary(arr, l, mid, v));
-
+		}
+		printf("Going right\n");
 		return (real_binary(arr, mid + 1, r, v));
 	}
 
 	return (-1);
 }
+
+/**
+ * advanced_binary - searches for int in array by dividing in half
+ * @array: array to search
+ * @size: size of array
+ * @value: value to find
+ * Return: index of value or -1
+ */
+
+int advanced_binary(int *array, size_t size, int value)
+{
+	int right = size - 1;
+
+	if (array == NULL)
+		return (-1);
+	return (real_binary(array, 0, right, value));
+}
+
 
 /**
  * advanced_binary - searches for int in array by dividing in half
