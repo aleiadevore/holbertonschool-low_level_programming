@@ -33,7 +33,7 @@ int check_smaller(int *arr, int i, int v, int count)
 	int j = i - 1;
 
 	if (arr[j] && arr[j] == v)
-		return check_smaller(arr, j, v, count + 1);
+		return (check_smaller(arr, j, v, count + 1));
 
 	if (count > 0)
 		print_check(arr, i, i + count);
@@ -60,7 +60,7 @@ int real_binary(int *arr, int l, int r, int v)
 		print_check(arr, l, r);
 
 		if (arr[mid] == v)
-			return check_smaller(arr, mid, v, 0);
+			return (check_smaller(arr, mid, v, 0));
 
 		if (arr[mid] > v)
 			return (real_binary(arr, l, mid, v));
